@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_producto_modelos",
+  "info": {
+    "displayName": "Modelo",
+    "icon": "layer-group"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ordenes_de_compras",
+  "info": {
+    "singularName": "orden-de-compra",
+    "pluralName": "ordenes-de-compras",
+    "displayName": "Orden de compra",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha_emision": {
+      "type": "date"
+    },
+    "hora_emision": {
+      "type": "time"
+    },
+    "precio_neto": {
+      "type": "integer"
+    },
+    "iva": {
+      "type": "integer"
+    },
+    "precio_bruto": {
+      "type": "integer"
+    },
+    "forma_de_pago": {
+      "type": "text"
+    },
+    "usuario_emisor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "ordenes_de_compras"
+    },
+    "receptor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::receptor.receptor",
+      "inversedBy": "ordene_de_compras"
+    },
+    "proveedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::proveedor.proveedor",
+      "inversedBy": "ordenes_de_compras"
+    },
+    "transportes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::transporte.transporte",
+      "inversedBy": "ordenes_de_compras"
+    },
+    "detalle_orden_de_compra": {
+      "type": "component",
+      "repeatable": true,
+      "component": "documento.productos"
+    }
+  }
+}

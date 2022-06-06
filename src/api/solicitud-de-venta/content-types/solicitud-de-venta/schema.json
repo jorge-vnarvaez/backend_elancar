@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solicitudes_de_ventas",
+  "info": {
+    "singularName": "solicitud-de-venta",
+    "pluralName": "solicitudes-de-ventas",
+    "displayName": "Solicitud de venta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha_emision": {
+      "type": "date"
+    },
+    "hora_emision": {
+      "type": "time"
+    },
+    "precio_neto": {
+      "type": "integer"
+    },
+    "iva": {
+      "type": "integer"
+    },
+    "precio_bruto": {
+      "type": "integer"
+    },
+    "validez": {
+      "type": "integer"
+    },
+    "total_kg": {
+      "type": "decimal"
+    },
+    "usuario_emisor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "solicitudes_de_ventas"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "solicitudes_de_ventas"
+    },
+    "detalle_solicitud_de_venta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "documento.productos"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_producto_ficha_tecnicas",
+  "info": {
+    "displayName": "Ficha Técnica",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "text"
+    }
+  }
+}

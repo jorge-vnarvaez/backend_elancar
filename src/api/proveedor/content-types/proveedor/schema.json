@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proveedores",
+  "info": {
+    "singularName": "proveedor",
+    "pluralName": "proveedores",
+    "displayName": "Proveedor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rut": {
+      "type": "string",
+      "maxLength": 12
+    },
+    "nombre_comercial": {
+      "type": "text"
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefono_fijo": {
+      "type": "string"
+    },
+    "telefono_celular": {
+      "type": "string"
+    },
+    "giro_comercial": {
+      "type": "string"
+    },
+    "receptores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::receptor.receptor",
+      "mappedBy": "proveedor"
+    },
+    "ordenes_de_compras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::orden-de-compra.orden-de-compra",
+      "mappedBy": "proveedor"
+    },
+    "solicitudes_de_compras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::solicitud-de-compra.solicitud-de-compra",
+      "mappedBy": "proveedor"
+    },
+    "productos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::producto.producto",
+      "inversedBy": "proveedores"
+    },
+    "sucursales": {
+      "type": "component",
+      "repeatable": true,
+      "component": "localizacion.ubicacion"
+    }
+  }
+}

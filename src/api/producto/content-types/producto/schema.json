@@ -1,0 +1,94 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "singularName": "producto",
+    "pluralName": "productos",
+    "displayName": "Producto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "text"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "imagen_referencia": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "galeria": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "despachable": {
+      "type": "boolean"
+    },
+    "kg": {
+      "type": "decimal"
+    },
+    "precio_proveedor": {
+      "type": "integer"
+    },
+    "activo": {
+      "type": "boolean"
+    },
+    "ficha_tecnica": {
+      "type": "component",
+      "repeatable": true,
+      "component": "producto.ficha-tecnica"
+    },
+    "stock_sucursal": {
+      "type": "component",
+      "repeatable": true,
+      "component": "producto.stock"
+    },
+    "proveedores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::proveedor.proveedor",
+      "mappedBy": "productos"
+    },
+    "marca": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::marca.marca",
+      "inversedBy": "productos"
+    },
+    "precios": {
+      "type": "component",
+      "repeatable": true,
+      "component": "producto.precio"
+    },
+    "modelos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "producto.modelo"
+    },
+    "sub_categoria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-categoria.sub-categoria",
+      "inversedBy": "productos"
+    }
+  }
+}

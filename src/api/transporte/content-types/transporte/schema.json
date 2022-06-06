@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transportes",
+  "info": {
+    "singularName": "transporte",
+    "pluralName": "transportes",
+    "displayName": "Transporte"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "text"
+    },
+    "bodegas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "localizacion.ubicacion"
+    },
+    "ordenes_de_compras": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::orden-de-compra.orden-de-compra",
+      "mappedBy": "transportes"
+    },
+    "ordenes_de_ventas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::orden-de-venta.orden-de-venta",
+      "mappedBy": "transportes"
+    }
+  }
+}

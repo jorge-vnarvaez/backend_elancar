@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "macro_categorias",
+  "info": {
+    "singularName": "macro-categoria",
+    "pluralName": "macro-categorias",
+    "displayName": "Macro Categoria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "text"
+    },
+    "categorias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::categoria.categoria",
+      "inversedBy": "macro_categorias"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_documento_productos",
+  "info": {
+    "displayName": "Productos",
+    "icon": "box"
+  },
+  "options": {},
+  "attributes": {
+    "producto": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::producto.producto"
+    },
+    "cantidad": {
+      "type": "integer"
+    }
+  }
+}

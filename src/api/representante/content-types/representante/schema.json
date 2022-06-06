@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "representantes",
+  "info": {
+    "singularName": "representante",
+    "pluralName": "representantes",
+    "displayName": "Representante"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rut": {
+      "type": "string",
+      "required": false,
+      "unique": false,
+      "maxLength": 12
+    },
+    "nombre": {
+      "type": "text",
+      "maxLength": 100
+    },
+    "tipo": {
+      "type": "string",
+      "maxLength": 35
+    }
+  }
+}

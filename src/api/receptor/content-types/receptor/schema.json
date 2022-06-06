@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "receptores",
+  "info": {
+    "singularName": "receptor",
+    "pluralName": "receptores",
+    "displayName": "Receptor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rut": {
+      "type": "string"
+    },
+    "primer_nombre": {
+      "type": "string"
+    },
+    "segundo_nombre": {
+      "type": "string"
+    },
+    "apellido_paterno": {
+      "type": "string"
+    },
+    "apellido_materno": {
+      "type": "string"
+    },
+    "telefono_fijo": {
+      "type": "string"
+    },
+    "telefono_celular": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "proveedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::proveedor.proveedor",
+      "inversedBy": "receptores"
+    },
+    "ordene_de_compras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::orden-de-compra.orden-de-compra",
+      "mappedBy": "receptor"
+    },
+    "solicitudes_de_compras": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::solicitud-de-compra.solicitud-de-compra",
+      "mappedBy": "receptor"
+    }
+  }
+}

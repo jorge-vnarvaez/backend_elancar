@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solicitudes_de_compras",
+  "info": {
+    "singularName": "solicitud-de-compra",
+    "pluralName": "solicitudes-de-compras",
+    "displayName": "Solicitud de compra",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha_emision": {
+      "type": "date"
+    },
+    "hora_emision": {
+      "type": "time"
+    },
+    "precio_neto": {
+      "type": "integer"
+    },
+    "iva": {
+      "type": "integer"
+    },
+    "precio_bruto": {
+      "type": "integer"
+    },
+    "forma_de_pago": {
+      "type": "text"
+    },
+    "condiciones_de_venta": {
+      "type": "integer"
+    },
+    "usuario_emisor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "solicitudes_de_compras"
+    },
+    "receptor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::receptor.receptor",
+      "inversedBy": "solicitudes_de_compras"
+    },
+    "proveedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::proveedor.proveedor",
+      "inversedBy": "solicitudes_de_compras"
+    },
+    "detalle_solicitud_de_compra": {
+      "type": "component",
+      "repeatable": true,
+      "component": "documento.productos"
+    }
+  }
+}

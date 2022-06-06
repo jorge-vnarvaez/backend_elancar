@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_localizacion_ubicacions",
+  "info": {
+    "displayName": "Ubicacion",
+    "icon": "map-marker-alt"
+  },
+  "options": {},
+  "attributes": {
+    "region": {
+      "type": "text"
+    },
+    "provincia": {
+      "type": "text"
+    },
+    "comuna": {
+      "type": "text"
+    },
+    "calle": {
+      "type": "text"
+    },
+    "nro": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_usuarios_comisions",
+  "info": {
+    "displayName": "Comision",
+    "icon": "money-bill-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "monto_acumulado": {
+      "type": "integer"
+    },
+    "fin_de_mes": {
+      "type": "date"
+    }
+  }
+}
